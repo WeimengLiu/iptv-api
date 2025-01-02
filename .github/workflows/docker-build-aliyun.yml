@@ -1,7 +1,9 @@
 name: Build and Push Docker Images To Aliyun
 
-on: [push] # 触发事件
-
+on:
+  workflow_dispatch:
+    branches:
+      - master
 jobs:
   build:
     if: ${{ github.ref == 'refs/heads/main'}}  # 1
