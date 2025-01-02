@@ -1,10 +1,10 @@
 name: Build and Push Docker Images To Aliyun
 
-on: [push, pull_request] # 触发事件
+on: [push] # 触发事件
 
 jobs:
   build:
-    if: ${{ github.ref == 'refs/heads/prod' || github.ref == 'refs/heads/docker' }}  # 1
+    if: ${{ github.ref == 'refs/heads/main'}}  # 1
     runs-on: ubuntu-latest
     steps:
      - name: Checkout repository
